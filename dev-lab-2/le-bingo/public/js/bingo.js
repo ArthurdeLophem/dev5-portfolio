@@ -40,28 +40,24 @@ export default class Bingo {
 
         // then we load the saved bingo cards from localstorage to mark them as done
         Bingo.load();
-    }
+    };
 
     renderCards() {
         // this function renders the cards to the screen
         console.log("rendering cards");
 
         // 🔥🔥🔥 TODO 2
-        let bingoBoard = document.querySelector('.bingo__board');
         let key = 0;
-        this.cards.forEach(card => {
+        let newKey;
+        let card;
+        this.cards.forEach(aCard => {
             let newKey = key + 1;
             //let newCard = `<div class="bingo__card" data-number="${newKey}" id="bingo__card${newKey}">${card}</div>`
-            let aCard = new Card(card, newKey);
+            card = new Card(aCard, newKey);
             key = newKey;
-            //console.log(aCard);
+            card.render(newKey);
         });
-        // loop through all the cards in the array and create a new instance of a Card()
-        // for()
-        // create a new card object
-        // render the card
-        Card.render();
-    }
+    };
 
     static checkWinner() {
         // a static function can be called without creating an instance of the class
@@ -74,7 +70,7 @@ export default class Bingo {
         // show the animated gif to the winner
         // document.querySelector(".bingo__overlay").style.display = "block";
         // }
-    }
+    };
 
     static save() {
         // 🔥🔥🔥 TODO 7
@@ -92,7 +88,7 @@ export default class Bingo {
 
         // save a selection like [1, 7, 8] to localstorage item "bingo"
         // you might want to check out how JSON.stringify() works
-    }
+    };
 
     static load() {
         // 🔥🔥🔥 TODO 8
@@ -108,5 +104,5 @@ export default class Bingo {
             // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
             // .bingo__card--done
         }
-    }
+    };
 }
