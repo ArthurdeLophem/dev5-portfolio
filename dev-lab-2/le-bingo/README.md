@@ -1,0 +1,13 @@
+<div align="center">
+  <img src="https://media.giphy.com/media/xinEBENYe1zP87HL4a/giphy.gif" width="350"/>  
+</div>
+
+**Hell yeah you got bingo, let the bin go...**
+ok just kidding let's go to the game
+
+## the rules are simple
+you have to tic 5 cards to win, to spice things up, also take a shot for every card marked...
+even if you can tick more than 5 yk, like just go on I guess.
+
+#### **small example shots of what to expect**
+![game-example](https://github.com/ArthurdeLophem/dev5-portfolio/tree/main/dev-lab-2/le-bingo/public/src/bingoer.gif)
