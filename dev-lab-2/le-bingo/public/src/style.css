@@ -29,6 +29,7 @@ body {
 
 .bingo__card--done {
     text-decoration: line-through;
+    color: blue;
 }
 
 .bingo__overlay {
