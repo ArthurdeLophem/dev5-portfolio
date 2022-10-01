@@ -11,8 +11,8 @@ export default class Card {
     markDone(target) {
         // to mark a card as done, we add a class .bingo__card--done to it
         // 🔥🔥🔥 TODO 5: mark or unmark (toggle) a bingo card when clicked
-        console.log("Marking card as done");
-        console.log(target);
+        //console.log("Marking card as done");
+        //console.log(target);
         if (target.classList.contains("bingo__card--done")) {
             target.classList.remove("bingo__card--done");
         } else {
@@ -38,13 +38,13 @@ export default class Card {
         //bingoBoard.innerHTML += card;
 
 
+
         // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
         card.addEventListener("click", (e) => {
-            console.log("this is card n°" + card.dataset.number)
+            //console.log("this is card n°" + card.dataset.number)
             this.markDone(e.target);
             Bingo.checkWinner();
-            // call checkWinner() on the Bingo class
-            // try to call the save() method on the Bingo class
+            Bingo.save();
         });
     };
 }
