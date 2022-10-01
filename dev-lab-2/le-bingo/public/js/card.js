@@ -1,10 +1,11 @@
 import Bingo from "./bingo.js";
 
 export default class Card {
-    constructor(title) {
+    constructor(title, key) {
         // the constructor is called when you create a new instance of the class
         this.title = title;
-        console.log(`Created a new card with title: ${title}`);
+        this.key = key;
+        console.log(`Created a new card with title: ${title}, keyNumber: ${key}`);
     }
 
     markDone(target) {
@@ -21,6 +22,7 @@ export default class Card {
         console.log("Rendering card...");
 
         // 🔥🔥🔥 TODO3: build the HTML element and append it to the DOM
+        let Card = `<div class="bingo__card" data-number="${newKey}" id="bingo__card${newKey}">${card}</div>`
         // let card = document.createElement("div");
         // card.dataset.number = counter + 1;
         // don't forget to append the child to to DOM

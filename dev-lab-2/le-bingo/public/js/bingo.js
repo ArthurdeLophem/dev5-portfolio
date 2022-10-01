@@ -1,7 +1,7 @@
 import Card from "./card.js";
 
 // 🔥🔥🔥 TODO 1 - make sure to export the class, if you want to be able to import the class elsewhere
-class Bingo {
+export default class Bingo {
     constructor() {
         // the constructor is called when you create a new instance of the class
         console.log("Welcome to Bingo! 🎉");
@@ -47,12 +47,20 @@ class Bingo {
         console.log("rendering cards");
 
         // 🔥🔥🔥 TODO 2
+        let bingoBoard = document.querySelector('.bingo__board');
+        let key = 0;
+        this.cards.forEach(card => {
+            let newKey = key + 1;
+            //let newCard = `<div class="bingo__card" data-number="${newKey}" id="bingo__card${newKey}">${card}</div>`
+            let aCard = new Card(card, newKey);
+            key = newKey;
+            //console.log(aCard);
+        });
         // loop through all the cards in the array and create a new instance of a Card()
         // for()
         // create a new card object
-        // let card = new Card(this.cards[i]);
         // render the card
-        // card.render();
+        Card.render();
     }
 
     static checkWinner() {
