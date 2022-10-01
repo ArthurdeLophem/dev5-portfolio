@@ -10,4 +10,4 @@ you have to tic 5 cards to win, to spice things up, also take a shot for every c
 even if you can tick more than 5 yk, like just go on I guess.
 
 #### **small example shots of what to expect**
-![game-example](https://github.com/ArthurdeLophem/dev5-portfolio/tree/main/dev-lab-2/le-bingo/public/src/bingoer.gif)
+![game-example](https://github.com/ArthurdeLophem/dev5-portfolio/blob/main/dev-lab-2/le-bingo/public/src/bingoer.gif?raw=true)
