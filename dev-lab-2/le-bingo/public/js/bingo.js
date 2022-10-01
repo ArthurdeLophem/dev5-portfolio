@@ -105,6 +105,14 @@ export default class Bingo {
         console.log("loading bingo selection from localstorage");
 
         // check if localstorage item exists
-
+        if (localStorage.getItem("cardKeys")) {
+            let cardsWon = JSON.parse(localStorage.getItem("cardKeys"));
+            cardsWon.forEach(card => {
+                console.log(card)
+                let markCard = document.querySelector(`[data-number="${card.key}"]`);
+                markCard.classList.add("bingo__card--done");
+            });
+            // .bingo__card--done
+        }
     };
 }
