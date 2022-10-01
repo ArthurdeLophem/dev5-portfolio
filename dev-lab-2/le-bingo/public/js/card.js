@@ -42,6 +42,7 @@ export default class Card {
         card.addEventListener("click", (e) => {
             console.log("this is card n°" + card.dataset.number)
             this.markDone(e.target);
+            Bingo.checkWinner();
             // call checkWinner() on the Bingo class
             // try to call the save() method on the Bingo class
         });

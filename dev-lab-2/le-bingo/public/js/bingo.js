@@ -61,15 +61,16 @@ export default class Bingo {
 
     static checkWinner() {
         // a static function can be called without creating an instance of the class
-        console.log("Checking for a winner");
-
         // 🔥🔥🔥 TODO 6
         // count all cards that are marked as done (select done items and count them with .length)
-        /// let cardsDone = ;
-        // if (cardsDone.length === 5) {
-        // show the animated gif to the winner
-        // document.querySelector(".bingo__overlay").style.display = "block";
-        // }
+        let bingoBoard = document.querySelector(".bingo__board");
+        console.log("Checking for a winner");
+        let cardsDone = bingoBoard.querySelectorAll(".bingo__card--done").length
+        if (cardsDone === 5) {
+            bingoBoard.style.display = "none";
+            document.querySelector(".bingo__overlay").style.visibility = "visible";
+        }
+
     };
 
     static save() {
