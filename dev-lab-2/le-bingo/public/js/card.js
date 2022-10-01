@@ -13,6 +13,7 @@ export default class Card {
         // 🔥🔥🔥 TODO 5: mark or unmark (toggle) a bingo card when clicked
         console.log("Marking card as done");
         console.log(target);
+        target.classList.add("bingo__card--done");
         // hint: use class .bingo__card--done
     };
 
@@ -22,16 +23,23 @@ export default class Card {
         //console.log("Rendering card..." + this.key);
 
         // 🔥🔥🔥 TODO3: build the HTML element and append it to the DOM
-        let card = `<div class="bingo__card" data-number="${this.key}" id="bingo__card${this.key}">${this.title}</div>`
+        //let card = `<div class="bingo__card" data-number="${this.key}" id="bingo__card${this.key}">${this.title}</div>`
+        let card = document.createElement("div");
+        card.dataset.number = this.key;
+        card.innerHTML = this.title;
+        card.setAttribute('id', `"bingo__card${this.key}"`);
+        card.classList.add("bingo__card");
         let bingoBoard = document.querySelector(".bingo__board");
-        bingoBoard.innerHTML += card;
-        //console.log(card)
+        bingoBoard.appendChild(card);
+        //bingoBoard.innerHTML += card;
+
 
         // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
-        /*card.addEventListener("click", (e) => {
-            // this.markDone(e.target);
+        card.addEventListener("click", (e) => {
+            console.log("this is card n°" + card.dataset.number)
+            this.markDone(e.target);
             // call checkWinner() on the Bingo class
             // try to call the save() method on the Bingo class
-        });*/
+        });
     };
 }
