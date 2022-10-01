@@ -9,5 +9,5 @@
 | labo  | link here    |status|
 |:-----:|:------------:|:----:|
 | 1️⃣   | [lab - 1](https://github.com/ArthurdeLophem/dev5-portfolio/)| ✅ |
-| 2️⃣   | [lab - 2](https://github.com/ArthurdeLophem/dev5-portfolio/)| 🔜 |
+| 2️⃣   | [lab - 2](https://github.com/ArthurdeLophem/dev5-portfolio/tree/main/dev-lab-2/le-bingo)| ✅ |
 | 3️⃣   | [lab - 3](https://github.com/ArthurdeLophem/dev5-portfolio/)| 🔜 |
