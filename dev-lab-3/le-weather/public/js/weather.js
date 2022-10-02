@@ -6,7 +6,14 @@ export default class Weather {
         this.getLocation();
         this.lat = 0;
         this.lng = 0;
+        this.getTime();
+        this.time;
     };
+
+    getTime() {
+        let today = new Date();
+        this.time = today.getHours() + ":" + today.getMinutes();
+    }
 
     getLocation() {
         navigator.geolocation.getCurrentPosition(this.locationSucces.bind(this));
