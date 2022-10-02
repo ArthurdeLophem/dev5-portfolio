@@ -17,18 +17,19 @@ export default class Weather {
         this.lat = location.coords.latitude;
         this.lng = location.coords.longitude;
         //console.log(this.lat, this.lng);
-        this.searchData();
         //localStorage.clear();
+        this.searchData();
     };
 
     getCurrent() {
+        console.log('Current weather')
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
         }).then(data => {
             console.log(data);
-            this.weatherData = data;
+            this.currentWeatherData = data;
             this.saveData()
         }).catch(err => {
             console.log(err);
@@ -36,13 +37,14 @@ export default class Weather {
     };
 
     getForecast() {
+        console.log('forecast')
         let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
         }).then(data => {
             console.log(data);
-            this.weatherData = data;
+            this.ForecastData = data;
             this.saveData()
         }).catch(err => {
             console.log(err);
@@ -55,12 +57,20 @@ export default class Weather {
     };
 
     searchData() {
-        if (!localStorage.getItem('weatherData') || localStorage.getItem('weatherData').length === 0) {
+        if (!localStorage.getItem('currentWeatherData')) {
             this.getCurrent();
+
+        } else {
+            this.currentWeatherData = JSON.parse(localStorage.getItem('currentWeatherData'));
+            console.log(this.currentWeatherData);
+        }
+
+        if (!localStorage.getItem('ForecastData')) {
             this.getForecast();
         }
         else {
-            //displayData(JSON.parse(localStorage.getItem('weatherData')));
+            this.ForecastData = JSON.parse(localStorage.getItem('ForecastData'));
+            console.log(this.ForecastData);
         }
     };
 
