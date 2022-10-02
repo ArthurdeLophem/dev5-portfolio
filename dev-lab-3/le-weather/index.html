@@ -3,14 +3,70 @@
 
 <head>
    <meta charset="UTF-8" />
-   <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>LeWeather</title>
-   <link rel="stylesheet" href="public/src/main.css">
+   <title>LeWeather - xl banner</title>
+   <link rel="stylesheet" href="./public/src/main.css" />
 </head>
 
 <body>
-   <div></div>
+   <div class="container">
+      <div class="time">
+         <p class="time__text">12:25</p>
+      </div>
+      <div class="weather__container">
+         <h1 class="weather__text">Beautifull day with slightly clouded, but blue sky</h1>
+         <div class="weather__info">
+            <div class="weather__cards">
+               <span class="info__icon">🔥</span>
+               <p class="info__text">9°</p>
+            </div>
+            <div class="weather__cards">
+               <span class="info__icon">🌡️</span>
+               <p class="info__text">9°</p>
+            </div>
+            <div class="weather__cards">
+               <span class="info__icon">💦</span>
+               <p class="info__text">9°</p>
+            </div>
+            <div class="weather__cards">
+               <span class="info__icon">💨</span>
+               <p class="info__text">9°</p>
+            </div>
+         </div>
+         <div class="weather__intersect"></div>
+         <div class="forecast">
+            <!-- loop template forecast div*7 <div class="forecast__day">
+               <p class="forecast__day">mon</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>-->
+            <div class="forecast__day">
+               <p class="forecast__day">tue</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+            <div class="forecast__day">
+               <p class="forecast__day">wed</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+            <div class="forecast__day">
+               <p class="forecast__day">thu</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+            <div class="forecast__day">
+               <p class="forecast__day">fri</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+            <div class="forecast__day">
+               <p class="forecast__day">sat</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+            <div class="forecast__day">
+               <p class="forecast__day">sun</p>
+               <h2 class="forecast__degree">9°</h2>
+            </div>
+         </div>
+      </div>
+   </div>
 </body>
 
 </html>
