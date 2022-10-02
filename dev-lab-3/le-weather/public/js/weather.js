@@ -17,7 +17,6 @@ export default class Weather {
 
     getLocation() {
         navigator.geolocation.getCurrentPosition(this.locationSucces.bind(this));
-
     }
 
     locationSucces(location) {
@@ -30,7 +29,7 @@ export default class Weather {
 
     getCurrent() {
         console.log('Current weather')
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}&units=metric`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
@@ -38,6 +37,7 @@ export default class Weather {
             console.log(data);
             this.currentWeatherData = data;
             this.saveData()
+            this.displayData();
         }).catch(err => {
             console.log(err);
         })
@@ -45,7 +45,7 @@ export default class Weather {
 
     getForecast() {
         console.log('forecast')
-        let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}`;
+        let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}&units=metric`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
@@ -53,6 +53,7 @@ export default class Weather {
             console.log(data);
             this.ForecastData = data;
             this.saveData()
+            this.displayData();
         }).catch(err => {
             console.log(err);
         })
@@ -66,10 +67,9 @@ export default class Weather {
     searchData() {
         if (!localStorage.getItem('currentWeatherData')) {
             this.getCurrent();
-
         } else {
             this.currentWeatherData = JSON.parse(localStorage.getItem('currentWeatherData'));
-            console.log(this.currentWeatherData);
+            this.displayData();
         }
 
         if (!localStorage.getItem('ForecastData')) {
@@ -77,11 +77,23 @@ export default class Weather {
         }
         else {
             this.ForecastData = JSON.parse(localStorage.getItem('ForecastData'));
-            console.log(this.ForecastData);
+            this.displayData();
         }
     };
 
-    static displayData() {
+    displayData() {
+        //display time
+        document.querySelector('.time__text').innerHTML = this.time;
+
+        //display current weather data
+        document.querySelector('.weather__text').innerHTML = this.currentWeatherData.weather[0].description + " with feeling temp of " + this.currentWeatherData.main.feels_like + " °C";
+        document.querySelector('.info__text--weather').innerHTML = this.currentWeatherData.weather[0].main;
+        document.querySelector('.info__text--temp').innerHTML = this.currentWeatherData.main.temp + " °C";
+        document.querySelector('.info__text--humidity').innerHTML = this.currentWeatherData.main.humidity + " %";
+        document.querySelector('.info__text--windspeed').innerHTML = this.currentWeatherData.wind.speed;
+
+        //display forecast data
+        console.log(this.ForecastData);
 
     };
 }
