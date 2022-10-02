@@ -28,13 +28,13 @@ export default class Weather {
     };
 
     getCurrent() {
-        console.log('Current weather')
+        //console.log('Current weather')
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}&units=metric`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
         }).then(data => {
-            console.log(data);
+            //console.log(data);
             this.currentWeatherData = data;
             this.saveData()
             this.displayData();
@@ -52,7 +52,7 @@ export default class Weather {
         }).then(data => {
             console.log(data);
             this.ForecastData = data;
-            this.saveData()
+            console.log(this.ForecastData);
             this.sortForecastData();
         }).catch(err => {
             console.log(err);
@@ -77,8 +77,7 @@ export default class Weather {
         }
         else {
             this.ForecastData = JSON.parse(localStorage.getItem('ForecastData'));
-            this.sortForecastData();
-
+            this.displayData();
         }
     };
 
@@ -90,6 +89,8 @@ export default class Weather {
             }
         });
         this.ForecastData = array;
+        console.log(this.ForecastData);
+        this.saveData();
         this.displayData();
     };
 
@@ -105,7 +106,17 @@ export default class Weather {
         document.querySelector('.info__text--windspeed').innerHTML = this.currentWeatherData.wind.speed;
 
         //display forecast data
-        console.log(this.ForecastData);
+        this.ForecastData.forEach(item => {
+            let day = item.dt_txt.slice(5, 10);
+            let degree = item.main.temp.toString().slice(0, 2);
+            let card = `<div class="forecast__card">
+            <p class="forecast__day">${day}</p>
+            <h2 class="forecast__degree">${degree} °C</h2>
+            </div>`;
+            document.querySelector('.forecast').innerHTML += card
+        });
+
+
     };
 
 
