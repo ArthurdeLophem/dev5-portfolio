@@ -23,6 +23,16 @@ export default class Weather {
 
     getCurrent() {
         let url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lng}&appid=${this.apiKey}`;
+        fetch(url).then(response => {
+            //console.log(response);
+            return response.json();
+        }).then(data => {
+            console.log(data);
+            this.weatherData = data;
+            this.saveData()
+        }).catch(err => {
+            console.log(err);
+        })
     };
 
     getForecast() {
