@@ -53,7 +53,7 @@ export default class Weather {
             console.log(data);
             this.ForecastData = data;
             this.saveData()
-            this.displayData();
+            this.sortForecastData();
         }).catch(err => {
             console.log(err);
         })
@@ -77,8 +77,20 @@ export default class Weather {
         }
         else {
             this.ForecastData = JSON.parse(localStorage.getItem('ForecastData'));
-            this.displayData();
+            this.sortForecastData();
+
         }
+    };
+
+    sortForecastData() {
+        let array = [];
+        this.ForecastData.list.forEach(item => {
+            if (item.dt_txt.includes("15:00:00")) {
+                array.push(item);
+            }
+        });
+        this.ForecastData = array;
+        this.displayData();
     };
 
     displayData() {
@@ -94,6 +106,7 @@ export default class Weather {
 
         //display forecast data
         console.log(this.ForecastData);
-
     };
+
+
 }
