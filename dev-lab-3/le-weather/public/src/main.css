@@ -12,6 +12,11 @@ body {
     padding: 0;
 }
 
+h1,
+.forecast {
+    color: #ffffff;
+}
+
 .time {
     position: absolute;
     top: 0;
@@ -24,6 +29,12 @@ body {
     left: 0%;
 }
 
+.gif__container {
+    position: absolute;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
 .time__text {
     font-weight: bolder;
 }
@@ -32,7 +43,7 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
