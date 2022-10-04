@@ -26,6 +26,10 @@ export default class Gif {
         localStorage.setItem('gif', JSON.stringify(this.gif));
     };
 
+    removeLocalStorage() {
+        localStorage.removeItem('gif');
+    }
+
     searchData() {
         if (!localStorage.getItem('gif')) {
             this.getGif();
@@ -36,7 +40,7 @@ export default class Gif {
     };
 
     displayData() {
-        let container = document.querySelector(".gif__container");
+        let container = document.querySelector(".gif");
         container.src = `${this.gif.data.embed_url}`;
     };
 }
