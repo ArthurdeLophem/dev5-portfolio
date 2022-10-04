@@ -7,7 +7,7 @@ export default class Gif {
 
     getGif() {
         console.log('giph')
-        let url = `https://api.giphy.com/v1/gifs/random?api_key=${this.apiKey}`;
+        let url = `https://cors-anywhere.herokuapp.com/https://api.giphy.com/v1/gifs/random?api_key=${this.apiKey}`;
         fetch(url).then(response => {
             //console.log(response);
             return response.json();
