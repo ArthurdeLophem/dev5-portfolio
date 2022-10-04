@@ -18,6 +18,12 @@ body {
     right: 2%;
 }
 
+.giphy__logo {
+    position: absolute;
+    top: 0;
+    left: 0%;
+}
+
 .time__text {
     font-weight: bolder;
 }
