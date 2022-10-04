@@ -36,5 +36,7 @@ export default class Gif {
     };
 
     displayData() {
+        let container = document.querySelector(".gif__container");
+        container.src = `${this.gif.data.embed_url}`;
     };
 }
