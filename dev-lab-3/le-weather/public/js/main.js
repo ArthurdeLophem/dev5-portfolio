@@ -3,16 +3,16 @@ import Match from './match.js';
 import Weather from '../js/weather.js';
 
 const weather = new Weather();
+const match = new Match();
 //const gif = new Gif();
 
 
-/*const reload = () => {
+const reload = () => {
     let reloadButton = document.querySelector('.reload__button');
-    reloadButton.addEventListener('click', () => {
-        weather.removeLocalStorage();
-        //gif.removeLocalStorage();
-        window.location.reload();
-    });
+    weather.removeLocalStorage();
+    localStorage.removeItem('gif');
+    //gif.removeLocalStorage();
+    window.location.reload();
 }
 
-reload()*/
+//reload()
