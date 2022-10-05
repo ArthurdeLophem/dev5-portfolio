@@ -106,8 +106,8 @@ export default class Weather {
 
         //display current weather data
         document.querySelector('.weather__text').innerHTML = this.currentWeatherData.weather[0].description + " with feeling temp of " + this.currentWeatherData.main.feels_like + " °C";
-        document.querySelector('.info__text--weather').innerHTML = this.currentWeatherData.weather[0].main;
-        document.querySelector('.info__text--temp').innerHTML = this.currentWeatherData.main.temp + " °C";
+        //document.querySelector('.info__text--weather').innerHTML = this.currentWeatherData.weather[0].main;
+        //document.querySelector('.info__text--temp').innerHTML = this.currentWeatherData.main.temp + " °C";
         document.querySelector('.info__text--humidity').innerHTML = this.currentWeatherData.main.humidity + " %";
         document.querySelector('.info__text--windspeed').innerHTML = this.currentWeatherData.wind.speed;
 

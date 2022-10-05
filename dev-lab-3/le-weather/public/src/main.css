@@ -12,6 +12,7 @@ body {
     padding: 0;
 }
 
+
 h1,
 .forecast {
     color: #ffffff;
@@ -23,18 +24,18 @@ h1,
     right: 2%;
 }
 
-.giphy__logo {
+.espn__logo {
     position: absolute;
     top: 0;
     left: 0%;
 }
 
-.gif__container {
+/*.gif__container {
     position: absolute;
     z-index: -1;
     filter: brightness(0.7);
     width: 860px;
-}
+}*/
 
 .time__text {
     font-weight: bolder;
@@ -49,42 +50,51 @@ h1,
     align-items: center;
 }
 
+.weather__text {
+    align-self: flex-start;
+    font-size: medium;
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
 .weather__container {
+    background-color: #171717;
     margin: 3em;
     margin-top: 5em;
     display: flex;
     justify-content: center;
     flex-direction: column;
     row-gap: 30px;
+    height: 304px;
+    width: 346px;
 }
 
 .weather__info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: row;
+    margin: 0 10px;
 }
 
 .weather__cards {
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px 5px;
     display: flex;
-    flex-direction: column;
+    gap: 0.5em;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .weather__info div span {
-    font-size: 2.5em;
-}
-
-.weather__intersect {
-    border-top: 3px solid;
-    border-image: linear-gradient(to right bottom, #ffffff 0%, #3333 30%, #ffffff 70%);
-    border-image-slice: 1;
+    font-size: 1.5em;
 }
 
 .forecast {
+    width: 50%;
+    color: #171717;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
