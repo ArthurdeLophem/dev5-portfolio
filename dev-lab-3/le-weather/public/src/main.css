@@ -24,12 +24,6 @@ h1,
     right: 2%;
 }
 
-.espn__logo {
-    position: absolute;
-    top: 0;
-    left: 0%;
-}
-
 /*.gif__container {
     position: absolute;
     z-index: -1;
@@ -70,11 +64,13 @@ h1,
     width: 346px;
 }
 
-.weather__info {
+.weather__bottomBanner {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     margin: 0 10px;
+    position: relative;
+    top: 2em;
 }
 
 .weather__cards {
