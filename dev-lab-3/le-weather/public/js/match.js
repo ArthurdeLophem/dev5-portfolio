@@ -12,7 +12,7 @@ export default class Match {
         let day = time.slice(8, 10);
         let month = time.slice(5, 7);
         let year = time.slice(0, 4);
-        let date = year + month + day
+        let date = year + month + day;
         this.date = date.toString();
     }
 
@@ -57,11 +57,10 @@ export default class Match {
             this.getMatches();
         } else {
             this.MatchData = JSON.parse(localStorage.getItem('MatchData'));
-            this.sortMatchesToday();
+            this.displayMatch();
         }
     };
 
     displayMatch() {
-
     };
 }
