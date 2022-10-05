@@ -1,5 +1,5 @@
 import '../src/main.css';
-import Gif from '../js/gif.js';
+import Match from './match.js';
 import Weather from '../js/weather.js';
 
 const weather = new Weather();
