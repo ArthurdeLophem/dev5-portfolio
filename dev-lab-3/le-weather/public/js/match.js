@@ -4,6 +4,8 @@ export default class Match {
         this.getToday();
         this.searchMatches();
         this.date;
+        this.matchup = [];
+        this.teams = [];
     };
 
     getToday() {
@@ -17,7 +19,7 @@ export default class Match {
     }
 
     getMatches() {
-        console.log('here');
+        console.log('getMatches');
         fetch('http://data.nba.net/prod/v1/2022/schedule.json')
             .then(response => {
                 //console.log(response);
@@ -25,18 +27,19 @@ export default class Match {
             }).then(data => {
                 console.log(data);
                 this.MatchData = data;
-                console.log(this.MatchData);
                 this.sortMatchesToday();
             }).catch(err => {
                 console.log(err);
             })
+        if (!localStorage.getItem('teams')) {
+            this.searchTeams();
+        }
     };
 
     sortMatchesToday() {
         console.log(this.MatchData.league.standard);
         let array = [];
         this.MatchData.league.standard.forEach(item => {
-            //console.log(item);
             if (item.startDateEastern === this.date) {
                 array.push(item);
             }
@@ -44,23 +47,44 @@ export default class Match {
         console.log(array);
         this.MatchData = array;
         this.saveMatches();
-        //this.displayMatch();
     }
 
     saveMatches() {
         localStorage.setItem('MatchData', JSON.stringify(this.MatchData));
+        localStorage.setItem('teams', JSON.stringify(this.teams));
+        this.searchTeams();
     };
 
     searchMatches() {
-        //localStorage.removeItem('MatchData');
         if (!localStorage.getItem('MatchData')) {
+            console.log("a")
             this.getMatches();
         } else {
+            console.log("b")
             this.MatchData = JSON.parse(localStorage.getItem('MatchData'));
-            this.displayMatch();
+        }
+        if (!localStorage.getItem('teams')) {
+            console.log("c")
+            this.getMatches();
+        } else {
+            console.log("d")
+            this.teams = JSON.parse(localStorage.getItem('teams'));
         }
     };
 
+    searchTeams() {
+        fetch('http://data.nba.net/10s/prod/v2/2022/teams.json')
+            .then(response => {
+                return response.json();
+            }).then(data => {
+                this.teams = data.league;
+                this.saveMatches();
+            }).catch(err => {
+                console.log(err);
+            })
+    }
+
     displayMatch() {
+        console.log(this.matchup)
     };
 }
