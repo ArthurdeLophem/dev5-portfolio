@@ -78,10 +78,16 @@ export default class Match {
                 return response.json();
             }).then(data => {
                 this.teams = data.league;
+                this.randomMatch();
                 this.saveMatches();
             }).catch(err => {
                 console.log(err);
             })
+    }
+
+    randomMatch() {
+        let index = Math.floor(Math.random() * this.MatchData.length);
+        this.matchup = [this.MatchData[index].hTeam.teamId, this.MatchData[index].vTeam.teamId];
     }
 
     displayMatch() {
