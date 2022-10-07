@@ -45,6 +45,8 @@ h1,
 }
 
 .weather__text {
+    top: -30px;
+    position: relative;
     align-self: flex-start;
     font-size: medium;
     margin: 0 auto;
@@ -59,7 +61,6 @@ h1,
     display: flex;
     justify-content: center;
     flex-direction: column;
-    row-gap: 30px;
     height: 304px;
     width: 346px;
 }
@@ -115,4 +116,14 @@ h1,
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.game__announcer {
+    color: white;
+    text-align: center;
+}
+
+.game__teams {
+    color: red;
+    text-align: center;
 }

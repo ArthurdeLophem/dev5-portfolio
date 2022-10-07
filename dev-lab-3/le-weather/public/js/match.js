@@ -101,9 +101,12 @@ export default class Match {
             }
         });
         //console.log(array);
+        this.matchup = array;
+        this.displayMatch();
     }
 
     displayMatch() {
         console.log(this.matchup)
+        document.querySelector('.game__teams').innerHTML = this.matchup[0].nickname + " vs " + this.matchup[1].nickname;
     };
 }
