@@ -64,12 +64,6 @@ export default class Weather {
         localStorage.setItem('ForecastData', JSON.stringify(this.ForecastData));
     };
 
-    removeLocalStorage() {
-        localStorage.removeItem('currentWeatherData');
-        localStorage.removeItem('ForecastData');
-        localStorage.removeItem('Time');
-    }
-
     searchData() {
         if (!localStorage.getItem('currentWeatherData')) {
             this.getCurrent();
