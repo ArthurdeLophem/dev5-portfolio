@@ -69,6 +69,7 @@ export default class Match {
         } else {
             console.log("d")
             this.teams = JSON.parse(localStorage.getItem('teams'));
+            this.randomMatch();
         }
     };
 
@@ -77,7 +78,7 @@ export default class Match {
             .then(response => {
                 return response.json();
             }).then(data => {
-                this.teams = data.league;
+                this.teams = data.league.standard;
                 this.randomMatch();
                 this.saveMatches();
             }).catch(err => {
@@ -88,6 +89,18 @@ export default class Match {
     randomMatch() {
         let index = Math.floor(Math.random() * this.MatchData.length);
         this.matchup = [this.MatchData[index].hTeam.teamId, this.MatchData[index].vTeam.teamId];
+        this.sortTeams();
+    }
+
+    sortTeams() {
+        console.log(this.matchup, this.teams)
+        let array = [];
+        this.teams.forEach(item => {
+            if (item.teamId === this.matchup[0] || item.teamId === this.matchup[1]) {
+                array.push(item);
+            }
+        });
+        //console.log(array);
     }
 
     displayMatch() {
