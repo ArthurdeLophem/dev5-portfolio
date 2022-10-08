@@ -99,7 +99,7 @@ export default class Weather {
         document.querySelector('.time__text').innerHTML = this.time;
 
         //display current weather data
-        document.querySelector('.weather__text').innerHTML = this.currentWeatherData.weather[0].description + " with feeling temp of " + this.currentWeatherData.main.feels_like + " °C";
+        document.querySelector('.weather__text').innerHTML = this.currentWeatherData.weather[0].description + " with feeling of " + this.currentWeatherData.main.feels_like + " °C";
         //document.querySelector('.info__text--weather').innerHTML = this.currentWeatherData.weather[0].main;
         //document.querySelector('.info__text--temp').innerHTML = this.currentWeatherData.main.temp + " °C";
         document.querySelector('.info__text--humidity').innerHTML = this.currentWeatherData.main.humidity + " %";

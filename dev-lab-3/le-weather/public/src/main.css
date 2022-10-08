@@ -24,18 +24,12 @@ h1,
     right: 2%;
 }
 
-/*.gif__container {
-    position: absolute;
-    z-index: -1;
-    filter: brightness(0.7);
-    width: 860px;
-}*/
-
 .time__text {
     font-weight: bolder;
 }
 
 .container {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -44,25 +38,48 @@ h1,
     align-items: center;
 }
 
+.filter {
+    position: absolute;
+    height: 304px;
+    width: 346px;
+    background-color: #171717;
+    filter: opacity(0.5) contrast(0.6) brightness(0.6);
+    z-index: 0;
+
+}
+
+.weather__container {
+    background: url(./back_texture.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 3em;
+    margin-top: 5em;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 304px;
+    width: 346px;
+}
+
+.weather_header {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nba__logo {
+    z-index: 0;
+}
+
 .weather__text {
-    top: -30px;
     position: relative;
-    align-self: flex-start;
     font-size: medium;
     margin: 0 auto;
     color: #ffffff;
     font-weight: bolder;
-}
-
-.weather__container {
-    background-color: #171717;
-    margin: 3em;
-    margin-top: 5em;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 304px;
-    width: 346px;
 }
 
 .weather__bottomBanner {
@@ -118,12 +135,24 @@ h1,
     cursor: pointer;
 }
 
+.game__container {
+    z-index: 1;
+    gap: 3em;
+    margin: 1em 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .game__announcer {
+    margin: 0;
+    padding-right: 6px;
     color: white;
-    text-align: center;
+    text-align: right;
+    font-weight: 900;
 }
 
 .game__teams {
+    margin: 0;
     color: red;
     text-align: center;
 }
