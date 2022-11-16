@@ -13,4 +13,4 @@
 | 3️⃣   | [lab - 3](https://github.com/ArthurdeLophem/dev5-portfolio/tree/main/dev-lab-3/le-weather)| ✅ |[codesandbox](https://codesandbox.io/s/weather-gifad-04b76c)|
 | 4️⃣   | [lab - 4](https://github.com/ArthurdeLophem/donunq-showcase)| ✅ | [hosted v](https://donunq.arthuris.online/)|
 | 5️⃣   | [lab - 5](https://github.com/ArthurdeLophem/le-chat)| ✅ | [notepad](https://codepen.io/r0808/pen/WNJqYdE)|
-| 6️⃣   | [lab - 6](https://github.com/ArthurdeLophem/)| 🔜 | [undefined] |
+| 6️⃣   | [lab - 6](https://github.com/ArthurdeLophem/le-view)| ✅ | [hosted v](https://le-view.vercel.app/) |
